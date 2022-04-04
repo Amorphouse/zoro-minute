@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-let zorome = [11111,22222,33333,44444,55555,111111,222222,235960]
+let zorome = [11111,22222,33333,44444,55555,111111,115959,131111,142222,153333,164444,175555,222222,235959]
 let zoromeDate = [1]
 
 class ViewController: UIViewController {
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
 func getNowDate() -> DateComponents {
     let dt = Date()
 //    let now = DateComponents()
-
+    
     let now = Calendar.current.dateComponents([.hour, .minute, .second], from: dt)
     
     return now
@@ -105,7 +105,7 @@ public func setNotification() {
     content.sound = UNNotificationSound.default
     
     for (index, time) in zorome.enumerated() {
-        trigger.append(UNCalendarNotificationTrigger(dateMatching: setDate(time: time - 10), repeats: true))
+        trigger.append(UNCalendarNotificationTrigger(dateMatching: setDate(time: time - 100), repeats: true))
         request.append(UNNotificationRequest(identifier: "zorome" + String(index), content: content, trigger: trigger[index]))
         UNUserNotificationCenter.current().add(request[index], withCompletionHandler: nil)
     }
@@ -120,7 +120,6 @@ public func setNotification() {
 //    f.dateStyle = .none
 //    f.locale = Locale(identifier: "ja_JP")
 //    let nowDate = Date()
-    
 }
 
 func dateToString(date: DateComponents) -> String {
