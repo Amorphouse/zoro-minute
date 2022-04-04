@@ -100,7 +100,7 @@ public func setNotification() {
     var trigger = [UNNotificationTrigger]()
     var request = [UNNotificationRequest]()
     let content = UNMutableNotificationContent()
-    content.title = "ゾロ目10秒前"
+    content.title = "ゾロ目30秒前"
     content.body = "備えて。"
     content.sound = UNNotificationSound.default
     
